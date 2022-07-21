@@ -2,13 +2,34 @@
     
 }
 
+.form {
+    
+}
+
+label {
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+}
+
+input {
+    display: flex;
+    margin: auto;
+}
+
+.play-button {
+    margin: auto;
+    display: flex;
+    margin-top: 15px;
+}
+
 .container {
     display: grid;
     grid-template-columns: repeat(3, 150px);
     grid-template-rows: repeat(3, 150px);
     width: 450px;
     margin: auto;
-    margin-top: 150px;
+    margin-top: 25px;
 }
 
 .grid {
