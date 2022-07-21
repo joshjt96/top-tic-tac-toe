@@ -1,5 +1,10 @@
 * {
-    background-color: rgb(4, 4, 62);
+    
+}
+
+body {
+    background: rgb(228,139,37);
+background: radial-gradient(circle, rgba(228,139,37,1) 0%, rgba(32,61,143,1) 100%);
 }
 
 .form {
@@ -17,6 +22,7 @@ input {
     display: flex;
     margin: auto;
     background-color: rgb(223, 221, 221);
+    border-radius: 5px;
 }
 
 .board-button {
@@ -27,6 +33,8 @@ input {
     margin-top: 80%;
     width: 90px;
     background-color: rgb(223, 221, 221);
+    border: rgb(4, 4, 62) solid;
+    border-radius: 5px;
 }
 
 .play-button {
@@ -34,6 +42,7 @@ input {
     display: flex;
     margin-top: 15px;
     background-color: rgb(223, 221, 221);
+    border-radius: 5px;
 }
 
 .container {
@@ -45,10 +54,10 @@ input {
     margin-top: 25px;
     background-color: white;
     border-radius: 15px;
-    border: 20px rgb(189, 66, 13) solid;
+    border: 20px rgb(228,139,37) solid;
 }
 
 .grid {
-    border: 1px solid black;
+    border: 1px solid rgb(4, 4, 62);
     background-color: rgb(223, 221, 221);
 }
