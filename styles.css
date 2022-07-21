@@ -1,5 +1,5 @@
 * {
-    
+    background-color: rgb(4, 4, 62);
 }
 
 .form {
@@ -10,17 +10,30 @@ label {
     display: flex;
     justify-content: center;
     padding: 15px;
+    color: white;
 }
 
 input {
     display: flex;
     margin: auto;
+    background-color: rgb(223, 221, 221);
+}
+
+.board-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20%;
+    margin-top: 80%;
+    width: 90px;
+    background-color: rgb(223, 221, 221);
 }
 
 .play-button {
     margin: auto;
     display: flex;
     margin-top: 15px;
+    background-color: rgb(223, 221, 221);
 }
 
 .container {
@@ -30,8 +43,12 @@ input {
     width: 450px;
     margin: auto;
     margin-top: 25px;
+    background-color: white;
+    border-radius: 15px;
+    border: 20px rgb(189, 66, 13) solid;
 }
 
 .grid {
     border: 1px solid black;
+    background-color: rgb(223, 221, 221);
 }

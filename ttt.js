@@ -1,20 +1,20 @@
 // Gameboard Module
 const gameboardModule = (() => {
     const gameboard = ['X', 'O'];
-        const grids = document.querySelectorAll('.grid');
-        grids.forEach(grids => {
-            grids.addEventListener('click', () => {
-                if (playerFactory.turn == 1){
-                    for (let key in gameboard) {
-                    grids.textContent = gameboard[0];
-                };
-            };  if (playerFactory.turn == 2){
-                    for (let key in gameboard) {
-                    grids.textContent = gameboard[1];
-                };
-            };
-        });
-    });
+    //     const grids = document.querySelectorAll('.grid');
+    //     grids.forEach(grids => {
+    //         grids.addEventListener('click', () => {
+    //             if (playerFactory.turn == 1){
+    //                 for (let key in gameboard) {
+    //                 grids.textContent = gameboard[0];
+    //             };
+    //         };  if (playerFactory.turn == 2){
+    //                 for (let key in gameboard) {
+    //                 grids.textContent = gameboard[1];
+    //             };
+    //         };
+    //     });
+    // });
     return {gameboard};
 })();
 
