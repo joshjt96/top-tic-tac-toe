@@ -1,7 +1,8 @@
 // Gameboard Module
 const gameboardModule = (() => {
-    const gameboard = ['X', 'O'];
-    return {gameboard};
+    const gameboard = [];
+    const players = [];
+    return {gameboard, players};
 })();
 
 // displayController Module
@@ -29,12 +30,40 @@ const displayControllerModule = (function () {
 
 // Player Factory
 const playerFactory = (name, piece) => {
+
+    for (let i = 0; i < 4; i++) {
+        if (gameboardModule.players.length >= 4) {
+            // gameboardModule.makePlayerMove();
+            break;
+        }   else if (gameboardModule.players.length == 0) {
+            let name = prompt('Enter your name')
+            if (name == '' || name == null) {
+                alert('Name cannot be blank');
+                continue;
+            }
+            let piece = 'X';
+            gameboardModule.players.push(name, piece);
+        }
+        else if (gameboardModule.players.length !== 0) {
+            let name = prompt('Enter your name, player 2')
+            if (name == '' || name == null) {
+                alert('Name cannot be blank');
+                continue;
+            }
+            let piece = 'O';
+            gameboardModule.players.push(name, piece);
+        }
+    }
+    console.log(gameboardModule.players);
     return {name, piece};
 };
 
 
 const p1 = playerFactory('Josh', 'X');
 const p2 = playerFactory('Amy', 'O');
+
+const startGame = document.querySelector('.play-button');
+startGame.addEventListener('click', playerFactory);
 
 // Dark Mode Button
 const darkModeBtn = document.querySelector('.dark-mode-button');
