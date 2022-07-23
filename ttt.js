@@ -1,20 +1,6 @@
 // Gameboard Module
 const gameboardModule = (() => {
     const gameboard = ['X', 'O'];
-    //     const grids = document.querySelectorAll('.grid');
-    //     grids.forEach(grids => {
-    //         grids.addEventListener('click', () => {
-    //             if (playerFactory.turn == 1){
-    //                 for (let key in gameboard) {
-    //                 grids.textContent = gameboard[0];
-    //             };
-    //         };  if (playerFactory.turn == 2){
-    //                 for (let key in gameboard) {
-    //                 grids.textContent = gameboard[1];
-    //             };
-    //         };
-    //     });
-    // });
     return {gameboard};
 })();
 
@@ -42,18 +28,20 @@ const displayControllerModule = (function () {
 })();
 
 // Player Factory
-const playerFactory = (turn, name) => {
-    startBtn = document.querySelector('.play-button');
-    p1Input = document.getElementById('p1');
-    p2Input = document.getElementById('p2');
-    p1Input.turn = 1;
-    p2Input.turn = 2;
-    return { turn, name };
+const playerFactory = (name, piece) => {
+    return {name, piece};
 };
 
 
-const p1 = playerFactory('1', 'Josh');
-const p2 = playerFactory('2', 'Amy');
+const p1 = playerFactory('Josh', 'X');
+const p2 = playerFactory('Amy', 'O');
+
+// Dark Mode Button
+const darkModeBtn = document.querySelector('.dark-mode-button');
+darkModeBtn.addEventListener('click', () => {
+    const bg = document.querySelector('.body');
+    bg.classList.toggle('clicked');
+});
     // function renderGameboard() {
     //     const grid = document.querySelector('.grid');
     //     grid.addEventListener('click', () => {

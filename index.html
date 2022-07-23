@@ -11,13 +11,27 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation:wght@400;700&display=swap" rel="stylesheet">
     </head>
     <body>
+    <header>
+        <h1 class="ttt-h1">Tic Tac Toe</h1>
+        <div class="dark-mode-switch">
+            <p>Dark Mode</p>
+            <label class="switch">
+                <input type="checkbox" class="dark-mode-button">
+                <span class="slider round"></span>
+            </label>
+        </div>
+    </header>
+    <div class="body">
     <div class="form">
         <form id="player-form">
-            <label for="p1">Player 1 Name:</label>
+            <label for="p1" class="dark-text">Player 1 Name:</label>
             <input type="text" id="p1">
-            <label for="p2">Player 2 Name:</label>
+            <label for="p2" class="dark-text">Player 2 Name:</label>
             <input type="text" id="p2">
         </form>
         <button type="submit" class="play-button">Start Playing</button>
@@ -51,6 +65,7 @@
                 <button type="submit" class="board-button">Select</button>
             </div>
         </div>
+    </div>
     <script src="ttt.js" async defer></script>
     </body>
 </html>
