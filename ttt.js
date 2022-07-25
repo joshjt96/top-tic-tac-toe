@@ -1,39 +1,9 @@
-// Gameboard Module
-const gameboardModule = (() => {
-    const gameboard = [];
-    const players = [];
-    return {gameboard, players};
-})();
-
-// displayController Module
-const displayControllerModule = (function () {
-    const gridBtn = document.querySelectorAll('.board-button');
-    let index = 0;
-    gridBtn.forEach(gridBtn => {
-        gridBtn.dataset.linkedBtn = index;
-        gridBtn.addEventListener('click', renderArray);
-        function renderArray() {
-            let index = 0;
-            const grids = document.querySelectorAll('.grid');
-            grids.forEach(grids => {
-                grids.dataset.linkedBtn = index;
-                if (gridBtn.getAttribute('data-linked-btn') == grids.getAttribute('data-linked-btn')) { 
-                    grids.textContent = gameboardModule.gameboard; 
-                }
-                index++;
-            });
-        }
-    index++;
-    });
-    return {};
-})();
-
 // Player Factory
 const playerFactory = (name, piece) => {
 
     for (let i = 0; i < 4; i++) {
         if (gameboardModule.players.length >= 4) {
-            // gameboardModule.makePlayerMove();
+            gameboardModule.playerMove();
             break;
         }   else if (gameboardModule.players.length == 0) {
             let name = prompt('Enter your name')
@@ -58,9 +28,56 @@ const playerFactory = (name, piece) => {
     return {name, piece};
 };
 
+// Gameboard Module
+const gameboardModule = (() => {
+    const gameboard = [];
+    const players = [];
+    function playerMove() {
+        if (players.length == 4) {
+            if (gameboard.length == 0) {
+                gameboard.push(players[1]);
+                console.log('Current gameboard array:', gameboard);
+            } else if (gameboard[gameboard.length - 1] == 'X') {
+                gameboard.push(players[3]);
+                console.log('Current gameboard array:', gameboard);
+            } else if (gameboard[gameboard.length - 1] == 'O') {
+                gameboard.push(players[1]);
+                console.log('Current gameboard array:', gameboard);
+            }
+        };
+    }
+    return {gameboard, players, playerMove};
+})();
 
-const p1 = playerFactory('Josh', 'X');
-const p2 = playerFactory('Amy', 'O');
+// displayController Module
+const displayControllerModule = (() => {
+    const gridBtn = document.querySelectorAll('.board-button');
+    let index = 0;
+    gridBtn.forEach(gridBtn => {
+        gridBtn.dataset.linkedBtn = index;
+        gridBtn.addEventListener('click', renderArray);
+        function renderArray() {
+            let index = 0;
+            const grids = document.querySelectorAll('.grid');
+            grids.forEach(grids => {
+                grids.dataset.linkedBtn = index;
+                if (gridBtn.getAttribute('data-linked-btn') == grids.getAttribute('data-linked-btn')) { 
+                    grids.textContent = gameboardModule.gameboard[gameboardModule.gameboard.length - 1]; 
+                }
+                index++;
+            });
+            gameboardModule.playerMove();
+        }
+        if () {
+            alert('Player 1 Wins!');
+        };
+    index++;
+    });
+    return {};
+})();
+
+// const p1 = playerFactory('Josh', 'X');
+// const p2 = playerFactory('Amy', 'O');
 
 const startGame = document.querySelector('.play-button');
 startGame.addEventListener('click', playerFactory);
