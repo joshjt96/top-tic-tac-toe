@@ -66,10 +66,39 @@ const displayControllerModule = (() => {
                 }
                 index++;
             });
-            gameboardModule.playerMove();
-        }
-        if () {
-            alert('Player 1 Wins!');
+            // Function to check for a win or tie
+            function checkWin(piece) {
+                const horizontal = [0,3,6].map(i=>{return[i, i+1, i+2]});
+                const vertical = [0,1,2].map(i=>{return[i, i+3, 1+6]});
+                const diagonal =  [[0,4,8], [2,4,6]];
+                let allWins = [].concat(horizontal).concat(vertical).concat(diagonal);
+                let results = allWins.some(indices => {
+                return grids[indices[0]].textContent == piece && grids[indices[1]].textContent == piece && grids[indices[2]].textContent == piece})
+                return results;
+            };
+                if (checkWin('X') == true) {
+                    console.log(gameboardModule.players[0], 'Wins!');
+                    const container = document.querySelector('.container');
+                    const winMessage = document.createElement('h1');
+                    winMessage.textContent = (`${gameboardModule.players[0]} wins!`);
+                    container.appendChild(winMessage);
+                    return;
+                } else if (checkWin('O') == true) {
+                    console.log(gameboardModule.players[2], 'Wins!');
+                    const container = document.querySelector('.container');
+                    const winMessage = document.createElement('h1');
+                    winMessage.textContent = (`${gameboardModule.players[2]} wins!`);
+                    container.appendChild(winMessage);
+                    return;
+                } else if (gameboardModule.length == 9) {
+                    console.log('Tie!');
+                    const container = document.querySelector('.container');
+                    const winMessage = document.createElement('h1');
+                    winMessage.textContent = ('Tie!');
+                    container.appendChild(winMessage);
+                    return;
+                }
+                gameboardModule.playerMove();
         };
     index++;
     });
