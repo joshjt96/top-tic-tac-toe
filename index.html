@@ -15,54 +15,51 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation:wght@400;700&display=swap" rel="stylesheet">
     </head>
-    <body>
+    <body class="body">
     <header>
         <h1 class="ttt-h1">Tic Tac Toe</h1>
-        <div class="dark-mode-switch">
+        <!-- <div class="dark-mode-switch">
             <p>Dark Mode</p>
             <label class="switch">
                 <input type="checkbox" class="dark-mode-button">
                 <span class="slider round"></span>
             </label>
-        </div>
+        </div> -->
     </header>
-    <div class="body">
-    <div class="form">
-        <form id="player-form">
-            <label for="p2" class="dark-text"></label>
-        </form>
-        <button type="submit" class="play-button">Start Game</button>
+    <div class="buttons">
+        <button type="submit" class="play-button">Start</button>
+        <button type="submit" class="restart-button" onClick="window.location.reload();">Restart</button>
     </div>
-        <div class="container">
-            <div class="grid grid-1">
-                <button type="submit" class="board-button">Select</button>
-            </div>
-            <div class="grid grid-2">
-                <button type="submit" class="board-button">Select</button>
-            </div>
-            <div class="grid grid-3">
-                <button type="submit" class="board-button">Select</button>
-            </div>
-            <div class="grid grid-4">
-                <button type="submit" class="board-button">Select</button>
-            </div>
-            <div class="grid grid-5">
-                <button type="submit" class="board-button">Select</button>
-            </div>
-            <div class="grid grid-6">
-                <button type="submit" class="board-button">Select</button>
-            </div>
-            <div class="grid grid-7">
-                <button type="submit" class="board-button">Select</button>
-            </div>
-            <div class="grid grid-8">
-                <button type="submit" class="board-button">Select</button>
-            </div>
-            <div class="grid grid-9">
-                <button type="submit" class="board-button">Select</button>
-            </div>
+    <div class="container">
+        <div class="grid grid-1">
+            <button type="submit" class="board-button"></button>
+        </div>
+        <div class="grid grid-2">
+            <button type="submit" class="board-button"></button>
+        </div>
+        <div class="grid grid-3">
+            <button type="submit" class="board-button"></button>
+        </div>
+        <div class="grid grid-4">
+            <button type="submit" class="board-button"></button>
+        </div>
+        <div class="grid grid-5">
+            <button type="submit" class="board-button"></button>
+        </div>
+        <div class="grid grid-6">
+            <button type="submit" class="board-button"></button>
+        </div>
+        <div class="grid grid-7">
+            <button type="submit" class="board-button"></button>
+        </div>
+        <div class="grid grid-8">
+            <button type="submit" class="board-button"></button>
+        </div>
+        <div class="grid grid-9">
+            <button type="submit" class="board-button"></button>
         </div>
     </div>
+    <div class="win-msg-container"></div>
     <script src="ttt.js" async defer></script>
     </body>
 </html>

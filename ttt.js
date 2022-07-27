@@ -28,6 +28,9 @@ const playerFactory = (name, piece) => {
     return {name, piece};
 };
 
+const startGame = document.querySelector('.play-button');
+startGame.addEventListener('click', playerFactory);
+
 // Gameboard Module
 const gameboardModule = (() => {
     const gameboard = [];
@@ -69,7 +72,7 @@ const displayControllerModule = (() => {
             // Function to check for a win or tie
             function checkWin(piece) {
                 const horizontal = [0,3,6].map(i=>{return[i, i+1, i+2]});
-                const vertical = [0,1,2].map(i=>{return[i, i+3, 1+6]});
+                const vertical = [0,1,2].map(i=>{return[i, i+3, i+6]});
                 const diagonal =  [[0,4,8], [2,4,6]];
                 let allWins = [].concat(horizontal).concat(vertical).concat(diagonal);
                 let results = allWins.some(indices => {
@@ -78,23 +81,26 @@ const displayControllerModule = (() => {
             };
                 if (checkWin('X') == true) {
                     console.log(gameboardModule.players[0], 'Wins!');
-                    const container = document.querySelector('.container');
+                    const container = document.querySelector('.win-msg-container');
                     const winMessage = document.createElement('h1');
                     winMessage.textContent = (`${gameboardModule.players[0]} wins!`);
+                    winMessage.classList.add('win-message');
                     container.appendChild(winMessage);
                     return;
                 } else if (checkWin('O') == true) {
                     console.log(gameboardModule.players[2], 'Wins!');
-                    const container = document.querySelector('.container');
+                    const container = document.querySelector('.win-msg-container');
                     const winMessage = document.createElement('h1');
                     winMessage.textContent = (`${gameboardModule.players[2]} wins!`);
+                    winMessage.classList.add('win-message');
                     container.appendChild(winMessage);
                     return;
                 } else if (gameboardModule.length == 9) {
                     console.log('Tie!');
-                    const container = document.querySelector('.container');
+                    const container = document.querySelector('.win-msg-container');
                     const winMessage = document.createElement('h1');
                     winMessage.textContent = ('Tie!');
+                    winMessage.classList.add('win-message');
                     container.appendChild(winMessage);
                     return;
                 }
@@ -107,9 +113,8 @@ const displayControllerModule = (() => {
 
 // const p1 = playerFactory('Josh', 'X');
 // const p2 = playerFactory('Amy', 'O');
-
-const startGame = document.querySelector('.play-button');
-startGame.addEventListener('click', playerFactory);
+// const restartGame = document.querySelector('.restart-button');
+// startGame.addEventListener('click', playerFactory);
 
 // Dark Mode Button
 const darkModeBtn = document.querySelector('.dark-mode-button');

@@ -6,7 +6,7 @@
     font-family: 'Edu NSW ACT Foundation', cursive;
 }
 
-.body {
+body {
     background: #F5EDDC;
     height: 100vh;
 }
@@ -21,6 +21,12 @@ header {
     width: 100vw;
     height: 75px;
     background: #293462;
+}
+
+.buttons {
+    display: flex;
+    margin-left: 500px;
+    margin-right: 500px;
 }
 
 .ttt-h1 {
@@ -51,12 +57,13 @@ input {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 20%;
-    margin-top: 80%;
-    width: 90px;
-    background-color: rgb(223, 221, 221);
-    border: #293462 solid;
-    border-radius: 5px;
+    /* margin-left: 20%;
+    margin-top: 80%; */
+    width: 150px;
+    height: 150px;
+    background-color: #F5EDDC;
+    border: #293462 solid 1px;
+    /* border-radius: 5px; */
 }
 
 .play-button {
@@ -66,7 +73,20 @@ input {
     margin-top: 15px;
     background-color: rgb(223, 221, 221);
     border-radius: 5px;
-    width: auto;
+    width: 100px;
+    height: auto;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.restart-button {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    background-color: rgb(223, 221, 221);
+    border-radius: 5px;
+    width: 100px;
     height: auto;
     padding: 10px;
     font-size: 20px;
@@ -86,11 +106,17 @@ input {
 
 .grid {
     border: 1px solid #293462;
-    background-color: rgb(223, 221, 221);
+    background-color: #F5EDDC;
     font-size: 50px;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+.win-message {
+    text-align: center;
+}
 
 /* Dark Mode Slider */
 
@@ -166,4 +192,31 @@ input:checked + .slider:before {
   
   .slider.round:before {
     border-radius: 50%;
+}
+
+@media(max-width:768px) {
+
+    .buttons {
+        display: flex;
+        margin: auto;
+    }
+
+    .container {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    width: 300px;
+    text-align: center;
+    border-radius: 15px;
+    }
+
+    .board-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100px;
+        height: 100px;
+        background-color: #F5EDDC;
+        border: #293462 solid 1px;
+    }
 }
